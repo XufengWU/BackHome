@@ -1,0 +1,53 @@
+body.game-app {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+#app-wrapper {
+  height: 600px;
+  width: 800px;
+  position: absolute;
+}
+div.background-canvas {
+  height: 600px;
+  width: 800px;
+  overflow: hidden;
+}
+img.background-img {
+  padding: 0;
+  height: 100%;
+}
+div.dialog-back {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 80%;
+  min-height: 6em;
+  bottom: 4em;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+div.dialog-content {
+  overflow-wrap: break-word;
+  padding: 0.5em;
+}
+div.dialog-content-body {
+  margin-top: 0.5em;
+}
+div.actions-wrapper {
+  text-align: center;
+}
+div.action-item {
+  color: white;
+  display: inline-block;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 0.5em;
+  box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.1);
+}
+div.action-item:hover {
+  box-shadow: 0 0 3px 3px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
