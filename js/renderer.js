@@ -91,7 +91,9 @@ class GameApp extends React.Component {
         if (GameApp.CHARACTER_COLOR[charaterName]) {
             return GameApp.CHARACTER_COLOR[charaterName]
         }
-        let newColor = "rgb(" + Math.floor(Math.random() * 255) + ", " + Math.floor(Math.random() * 255) + ", " + Math.floor(Math.random() * 255) + ")"
+        let newColor = "rgb(" + (50 + Math.floor(Math.random() * 200)) 
+        + ", " + (50 + Math.floor(Math.random() * 200)) 
+        + ", " + (50 + Math.floor(Math.random() * 200)) + ")"
         GameApp.CHARACTER_COLOR[charaterName] = newColor
         return newColor
     }
@@ -134,6 +136,10 @@ class GameApp extends React.Component {
         this.setState({
             game_state: new_game_state
         })
+        let default_next_scene = this.state.game_data.scenes[this.state.game_state.current_scene].default_next
+        if (this.isEndOfDialogs() && default_next_scene) {
+            this.loadScene(default_next_scene)
+        }
     }
 
     onActionClick(e) {
@@ -180,6 +186,6 @@ class GameApp extends React.Component {
 
 // entry point
 ReactDOM.render(
-    <GameApp game="demo" start_scene="开始"/>,
+    <GameApp game="backhome" start_scene="开始"/>,
     document.getElementById('app-wrapper')
 );
